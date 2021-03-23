@@ -1,0 +1,38 @@
+@media only screen and (min-aspect-ratio: 5/3) {
+.chartWrapper {
+    height: 44.5vh;
+    width: 50%;
+    margin-bottom: 1%;
+  }
+}
+
+  @media only screen and (min-aspect-ratio: 1/1) and (max-aspect-ratio: 5/3) {
+    .chartWrapper {
+      height: 44.5vh;
+      width: 70%;
+      margin-bottom: 1%;
+    }
+  }
+
+  @media only screen and (max-aspect-ratio: 1/1) {
+    .chartWrapper {
+      height: 44.5vh;
+      width: 95%;
+      margin-bottom: 1%;
+    }
+  }
+
+  .checkbox {
+    margin: 0 10px;
+  } 
+  .inputBox {
+    margin: 0 10px;
+  }
+  .form {
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  .button {
+    margin-top: 1%;
+    margin-right: 10px;
+  }

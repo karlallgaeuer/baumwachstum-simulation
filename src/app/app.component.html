@@ -1,0 +1,251 @@
+<!-- Toolbar ganz oben (Header) -->
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+  <!-- Toolbar header -->
+  <span>Visualisierung des Höhenwachstums von Bäumen</span>
+  <!-- VHB-Icon rechts in der Toolbox (mit Link)-->
+  <a href="https://www.vhb.org/" target="_blank"><img width="85px" src="assets\images\Virtuelle_Hochschule_Bayern_logo.svg"></a>
+</mat-toolbar>
+
+<!-- Form für die User-Inputs und den Start-Button-->
+<form class="form" fxLayout="column" fxLayoutAlign="space-between center">
+  <!-- Form header -->
+  <h2 class="mat-h2" color="secondary">Simulationsparameter</h2>
+
+  <!-- Rotbuche Settings-->
+  <div>
+    <!-- Checkbox: "&nbsp;" fügt Leerzeichen ein, damit die Setting-Reihe mit der Reihe darüber passt -->
+    <mat-checkbox (change)="setChecked($event, $event.checked)" color="primary" class="checkbox" id="rotbuche">Rotbuche&nbsp;&nbsp;&nbsp;&nbsp;</mat-checkbox>
+    
+    <!-- Startalter -->
+    <mat-form-field class="inputBox">
+      <mat-label>Startalter [J]</mat-label>
+      <input matInput type="number" (keypress)="numberOnly($event)" id="rotbucheStartalter" value=0 min=0 max=1000/>
+    </mat-form-field>
+
+    <!-- Startzeitpunkt -->
+    <mat-form-field class="inputBox">
+      <mat-label>Startzeitpunkt [J]</mat-label>
+      <input matInput type="number" (keypress)="numberOnly($event)" id="rotbucheStartzeitpunkt" value=0 min=0 max=1000/>
+    </mat-form-field>
+    
+    <!-- Standortklasse -->
+    <mat-form-field class="inputBox">
+      <mat-label>Standortklasse</mat-label>
+      <mat-select [(value)]="selectedRotbucheStandortklasse">
+        <mat-option value="0">gering</mat-option>
+        <mat-option value="1">mittel</mat-option>
+        <mat-option value="2">hoch</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Überschirmungsstärke -->
+    <mat-form-field class="inputBox">
+      <mat-label>Überschirmung</mat-label>
+      <mat-select [(value)]="selectedRotbucheUeberschirmung">
+        <mat-option value="0">schirmfrei</mat-option>
+        <mat-option value="1">leicht</mat-option>
+        <mat-option value="2">stark</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Fichte Settings-->
+  <div>
+    <!-- Checkbox: "&nbsp;" fügt Leerzeichen ein, damit die Setting-Reihe mit der Reihe darüber passt -->
+    <mat-checkbox (change)="setChecked($event, $event.checked)" color="primary" class="checkbox" id="fichte">Fichte&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-checkbox>
+    
+    <!-- Startalter -->
+    <mat-form-field class="inputBox">
+      <mat-label>Startalter [J]</mat-label>
+      <input matInput type="number" (keypress)="numberOnly($event)" id="fichteStartalter" value=0 min=0 max=1000/>
+    </mat-form-field>
+
+    <!-- Startzeitpunkt -->
+    <mat-form-field class="inputBox">
+      <mat-label>Startzeitpunkt [J]</mat-label>
+      <input matInput type="number" (keypress)="numberOnly($event)" id="fichteStartzeitpunkt" value=0 min=0 max=1000/>
+    </mat-form-field>
+    
+    <!-- Standortklasse -->
+    <mat-form-field class="inputBox">
+      <mat-label>Standortklasse</mat-label>
+      <mat-select [(value)]="selectedFichteStandortklasse">
+        <mat-option value="0">gering</mat-option>
+        <mat-option value="1">mittel</mat-option>
+        <mat-option value="2">hoch</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Überschirmungsstärke -->
+    <mat-form-field class="inputBox">
+      <mat-label>Überschirmung</mat-label>
+      <mat-select [(value)]="selectedFichteUeberschirmung">
+        <mat-option value="0">schirmfrei</mat-option>
+        <mat-option value="1">leicht</mat-option>
+        <mat-option value="2">stark</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Sandbirke Settings-->
+  <div>
+    <!-- Checkbox: "&nbsp;" fügt Leerzeichen ein, damit die Setting-Reihe mit der Reihe darüber passt -->
+    <mat-checkbox (change)="setChecked($event, $event.checked)" color="primary" class="checkbox" id="sandbirke">Sandbirke&nbsp;&nbsp;&nbsp;</mat-checkbox>
+    
+    <!-- Startalter -->
+    <mat-form-field class="inputBox">
+      <mat-label>Startalter [J]</mat-label>
+      <input matInput type="number" (keypress)="numberOnly($event)" id="sandbirkeStartalter" value=0 min=0 max=1000/>
+    </mat-form-field>
+
+    <!-- Startzeitpunkt -->
+    <mat-form-field class="inputBox">
+      <mat-label>Startzeitpunkt [J]</mat-label>
+      <input matInput type="number" (keypress)="numberOnly($event)" id="sandbirkeStartzeitpunkt" value=0 min=0 max=1000/>
+    </mat-form-field>
+    
+    <!-- Standortklasse -->
+    <mat-form-field class="inputBox">
+      <mat-label>Standortklasse</mat-label>
+      <mat-select [(value)]="selectedSandbirkeStandortklasse">
+        <mat-option value="0">gering</mat-option>
+        <mat-option value="1">mittel</mat-option>
+        <mat-option value="2">hoch</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Überschirmungsstärke -->
+    <mat-form-field class="inputBox">
+      <mat-label>Überschirmung</mat-label>
+      <mat-select [(value)]="selectedSandbirkeUeberschirmung">
+        <mat-option value="0">schirmfrei</mat-option>
+        <mat-option value="1">leicht</mat-option>
+        <mat-option value="2">stark</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Weisstanne Settings-->
+  <div>
+    <!-- Checkbox: "&nbsp;" fügt Leerzeichen ein, damit die Setting-Reihe mit der Reihe darüber passt -->
+    <mat-checkbox (change)="setChecked($event, $event.checked)" color="primary" class="checkbox" id="weisstanne">Weisstanne</mat-checkbox>
+    
+    <!-- Startalter -->
+    <mat-form-field class="inputBox">
+      <mat-label>Startalter [J]</mat-label>
+      <input matInput type="number" (keypress)="numberOnly($event)" id="weisstanneStartalter" value=0 min=0 max=1000/>
+    </mat-form-field>
+
+    <!-- Startzeitpunkt -->
+    <mat-form-field class="inputBox">
+      <mat-label>Startzeitpunkt [J]</mat-label>
+      <input matInput type="number" (keypress)="numberOnly($event)" id="weisstanneStartzeitpunkt" value=0 min=0 max=1000/>
+    </mat-form-field>
+    
+    <!-- Standortklasse -->
+    <mat-form-field class="inputBox">
+      <mat-label>Standortklasse</mat-label>
+      <mat-select [(value)]="selectedWeisstanneStandortklasse">
+        <mat-option value="0">gering</mat-option>
+        <mat-option value="1">mittel</mat-option>
+        <mat-option value="2">hoch</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Überschirmungsstärke -->
+    <mat-form-field class="inputBox">
+      <mat-label>Überschirmung</mat-label>
+      <mat-select [(value)]="selectedWeisstanneUeberschirmung">
+        <mat-option value="0">schirmfrei</mat-option>
+        <mat-option value="1">leicht</mat-option>
+        <mat-option value="2">stark</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Kiefer Settings-->
+  <div>
+    <!-- Checkbox: "&nbsp;" fügt Leerzeichen ein, damit die Setting-Reihe mit der Reihe darüber passt -->
+    <mat-checkbox (change)="setChecked($event, $event.checked)" color="primary" class="checkbox" id="kiefer">Kiefer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</mat-checkbox>
+    
+    <!-- Startalter -->
+    <mat-form-field class="inputBox">
+      <mat-label>Startalter [J]</mat-label>
+      <input matInput type="number" (keypress)="numberOnly($event)" id="kieferStartalter" value=0 min=0 max=1000/>
+    </mat-form-field>
+
+    <!-- Startzeitpunkt -->
+    <mat-form-field class="inputBox">
+      <mat-label>Startzeitpunkt [J]</mat-label>
+      <input matInput type="number" (keypress)="numberOnly($event)" id="kieferStartzeitpunkt" value=0 min=0 max=1000/>
+    </mat-form-field>
+    
+    <!-- Standortklasse -->
+    <mat-form-field class="inputBox">
+      <mat-label>Standortklasse</mat-label>
+      <mat-select [(value)]="selectedKieferStandortklasse">
+        <mat-option value="0">gering</mat-option>
+        <mat-option value="1">mittel</mat-option>
+        <mat-option value="2">hoch</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Überschirmungsstärke -->
+    <mat-form-field class="inputBox">
+      <mat-label>Überschirmung</mat-label>
+      <mat-select [(value)]="selectedKieferUeberschirmung">
+        <mat-option value="0">schirmfrei</mat-option>
+        <mat-option value="1">leicht</mat-option>
+        <mat-option value="2">stark</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Simulation Settings -->
+  <div>
+    <!-- Simulationslaufzeit Input-Box-->
+    <mat-form-field class="inputBox">
+      <mat-label>Simulationslaufzeit [J]</mat-label>
+      <input matInput type="number" (keypress)="numberOnly($event)" id="laufzeit" value=150 min=1 max=2000/>
+    </mat-form-field>
+
+    <!-- Simulationsgeschwindigkeit -->
+    <mat-form-field class="inputBox">
+      <mat-label>Simulationsgeschw.</mat-label>
+      <mat-select [(value)]="selectedSimulationSpeed">
+        <mat-option value="300">langsam</mat-option>
+        <mat-option value="120">mittel</mat-option>
+        <mat-option value="50">schnell</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Simulation Steuerung -->
+  <div>
+    <!-- Start button (type="button" damit nicht der default submit button in einem form verwendet wird-->
+    <button class="button" type="button" mat-flat-button color="primary" color="primary" (click)="start()">Start</button>
+
+    <!-- Stop button (type="button" damit nicht der default submit button in einem form verwendet wird-->
+    <button class="button" type="button" mat-flat-button color="primary" color="primary" (click)="stop()">Stop</button>
+
+    <!-- Reset button (type="button" damit nicht der default submit button in einem form verwendet wird-->
+    <button class="button" type="button" mat-flat-button color="primary" color="primary" (click)="reset()">Reset</button>
+  </div>
+
+</form>
+
+<!-- In diesem Wrapper sind alle Plots -->
+<div div fxLayout="column" fxLayoutAlign="space-between center">
+  <!-- In diesem Wrapper ist der Baumwachstum-Plot auf 100% width und height und ist responsive -->
+  <div class="chartWrapper">
+    <!-- Canvas Element in dem der Plot erzeugt wird-->
+    <canvas id="baumwachstumChart"></canvas>
+  </div>
+
+  <!-- In diesem Wrapper ist der Ableitungs-Plot auf 100% width und height und ist responsive -->
+  <div class="chartWrapper">
+    <!-- Canvas Element in dem der Plot erzeugt wird-->
+    <canvas id="ableitungChart"></canvas>
+  </div>
+
+<router-outlet></router-outlet>
