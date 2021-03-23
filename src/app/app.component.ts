@@ -50,11 +50,6 @@ export class AppComponent{
   public selectedWeisstanneUeberschirmung:string = "0";
   public selectedKieferUeberschirmung:string = "0";
 
-
-  //TODO: Beschreibung hinzufügen: Man kann auf dem Plot zb. Rotbuche anclicken. Man muss reset drücken wenn man neue Inputs auswählen will. Erledigt, steht in word (vorlesungsteil)
-
-  //TODO: chart js tooltip bild einfügen? kaum möglich?
-
   constructor() {
     // Checkbox Map initialisieren
     this.checkboxSelection.set('rotbuche', false);
