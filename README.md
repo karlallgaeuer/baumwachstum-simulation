@@ -1,5 +1,6 @@
 # Visualisierung des Höhenwachstums von Bäumen
 https://karlallgaeuer.github.io/baumwachstum-simulation/
+
 Das Projekt wurde erstellt mit [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 Die Höhenentwicklung wurde nachberechnet mit einem exponentiellen Modell nach Chapman-Richards (1959):
