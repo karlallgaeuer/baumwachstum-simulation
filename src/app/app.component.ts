@@ -682,9 +682,9 @@ class Simulator {
             let b3:number = this.standortKoeffs.get(currBaum + String(currStandortklasse))[2];
             //Überschirmungsfaktor für die Auswahl der Überschirmungsstärke für diesen Baum abfragen
             let ueberschirmung:number = this.ueberschirmungFaktoren.get(currBaum + String(currUeberschirmung));
-            // Nächsten Höhenwert berechnen (Mitscherlichfunktion mit eingesetzten Koeffizienten)
+            // Nächsten Höhenwert berechnen (Funktion nach Chapman-Richards mit eingesetzten Koeffizienten)
             let baumhoeheNext:number = (b1*(1-Math.exp(-b2*currAlter))**b3) * ueberschirmung;
-            // Nächsten Ableitungswert berechnen (Mitscherlichfunktion abgeleitet mit eingesetzten Koeffizienten)
+            // Nächsten Ableitungswert berechnen (Funktion nach Chapman-Richards, abgeleitet mit eingesetzten Koeffizienten)
             let ableitungNext:number = (b1*b2*b3*ueberschirmung) * Math.exp((-b2*currAlter)) * (1-Math.exp(-b2*currAlter))**(b3-1);
             // Ergebnis-Werte speichern
             resultMapBaumhoehe.get(currBaum).push(baumhoeheNext);
@@ -699,7 +699,6 @@ class Simulator {
         }
       }
     }
-    //console.log(resultMapBaumhoehe, resultMapAbleitung);
     return [resultMapBaumhoehe, resultMapAbleitung];
   }
 }
