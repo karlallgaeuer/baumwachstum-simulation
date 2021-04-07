@@ -280,12 +280,12 @@ class Plotter {
     this.colorMap.set('weisstanne', 'rgba(86, 180, 233, 1)');
     this.colorMap.set('kiefer', 'rgba(210, 200, 88, 1)');
     //this.colorMap.set('kiefer', 'rgba(236, 181, 217, 1)');
-    // Dashed-Map befüllen
-    this.dashedMap.set('rotbuche', []);
-    this.dashedMap.set('fichte', [20, 4]);
-    this.dashedMap.set('sandbirke', [10, 4, 3, 4]);
-    this.dashedMap.set('weisstanne', [6, 6]);
-    this.dashedMap.set('kiefer', [3, 2]);
+    // Dashed-Map befüllen (Optionaler Linien-Style auskommentiert)
+    this.dashedMap.set('rotbuche', []); // [] 
+    this.dashedMap.set('fichte', [20, 4]); // []
+    this.dashedMap.set('sandbirke', [10, 4, 3, 4]); // [10,4]
+    this.dashedMap.set('weisstanne', [6, 6]); // [10,4]
+    this.dashedMap.set('kiefer', [3, 2]); // [10,4]
   }
 
   // Gibt aus ob ein Baumwachstums-Chart existiert
